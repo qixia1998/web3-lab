@@ -73,20 +73,16 @@
 假设使用 tokenX的 $\Delta x$ 交换 token Y:
 * 初始储备: $x_0 * y_0 = k$
 * 交换后: $(x_0 + \Delta x) \cdot (y_0 - \Delta y) = k$
-* 求输出数量 $\Delta y$:
-  $\Delta y = y_0 - \frac{k}{x_0 + \Delta x}$
+* 求输出数量 $\Delta y$ : $\Delta y = y_0 - \frac{k}{x_0 + \Delta x}$
 
 ###### 含手续费(例如0.3%)
-* 仅使用了 Δx 的一部分进行交换：
-$$
-\Delta x_{\text{exec}} = \Delta x \cdot 0.997
-$$
+* 仅使用了 Δx 的一部分进行交换： $\Delta x_{\text{exec}} = \Delta x \cdot 0.997$
 * 输出公式为: `amountOut = (reserveOut * amountInWithFee) / (reserveIn + amountInWithFee)`
 
 其中 `amountInWithFee = amountIn * 0.997` （对于 0.3% 的费用）
 
 ###### 现货价格 vs. 执行价格
-* 即时价格：某点切线的斜率(y/x)（初始状态下，这是$y_0 /x_0$）。
+* 即时价格：某点切线的斜率(y/x)（初始状态下，这是 $y_0 /x_0$ ）。
 * 执行价格：有限交易的平均价格（起始点与结束点之间的割线）。
 * 价格影响：成交价格与即时价格之间的差额会随着交易规模的增大而增加。
 ##### 例子
